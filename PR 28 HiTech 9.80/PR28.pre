@@ -1,0 +1,1547 @@
+
+# 1 "C:\Users\Phang\Desktop\9.80\PR 28\PR28.c"
+
+# 23 "C:\Program Files\HI-TECH Software\include\pic16f72x.h"
+volatile unsigned char INDF @ 0x000;
+volatile unsigned char TMR0 @ 0x001;
+volatile unsigned char PCL @ 0x002;
+volatile unsigned char STATUS @ 0x003;
+volatile unsigned char FSR @ 0x004;
+volatile unsigned char PORTA @ 0x005;
+volatile unsigned char PORTB @ 0x006;
+volatile unsigned char PORTC @ 0x007;
+
+# 33
+volatile unsigned char PORTD @ 0x008;
+
+volatile unsigned char PORTE @ 0x009;
+volatile unsigned char PCLATH @ 0x00A;
+volatile unsigned char INTCON @ 0x00B;
+volatile unsigned char PIR1 @ 0x00C;
+volatile unsigned char PIR2 @ 0x00D;
+volatile unsigned char TMR1L @ 0x00E;
+volatile unsigned char TMR1H @ 0x00F;
+volatile unsigned char T1CON @ 0x010;
+volatile unsigned char TMR2 @ 0x011;
+volatile unsigned char T2CON @ 0x012;
+volatile unsigned char SSPBUF @ 0x013;
+volatile unsigned char SSPCON @ 0x014;
+volatile unsigned char CCPR1L @ 0x015;
+volatile unsigned char CCPR1H @ 0x016;
+volatile unsigned char CCP1CON @ 0x017;
+volatile unsigned char RCSTA @ 0x018;
+volatile unsigned char TXREG @ 0x019;
+volatile unsigned char RCREG @ 0x01A;
+volatile unsigned char CCPR2L @ 0x01B;
+volatile unsigned char CCPR2H @ 0x01C;
+volatile unsigned char CCP2CON @ 0x01D;
+volatile unsigned char ADRES @ 0x01E;
+volatile unsigned char ADCON0 @ 0x01F;
+volatile unsigned char OPTION @ 0x081;
+volatile unsigned char TRISA @ 0x085;
+volatile unsigned char TRISB @ 0x086;
+volatile unsigned char TRISC @ 0x087;
+
+# 64
+volatile unsigned char TRISD @ 0x088;
+
+volatile unsigned char TRISE @ 0x089;
+volatile unsigned char PIE1 @ 0x08C;
+volatile unsigned char PIE2 @ 0x08D;
+volatile unsigned char PCON @ 0x08E;
+volatile unsigned char T1GCON @ 0x08F;
+volatile unsigned char OSCCON @ 0x090;
+volatile unsigned char OSCTUNE @ 0x091;
+volatile unsigned char PR2 @ 0x092;
+volatile unsigned char SSPADD @ 0x093;
+
+volatile unsigned char SSPMSK @ 0x093;
+volatile unsigned char SSPSTAT @ 0x094;
+volatile unsigned char WPUB @ 0x095;
+volatile unsigned char IOCB @ 0x096;
+volatile unsigned char TXSTA @ 0x098;
+volatile unsigned char SPBRG @ 0x099;
+volatile unsigned char APFCON @ 0x09C;
+volatile unsigned char FVRCON @ 0x09D;
+volatile unsigned char ADCON1 @ 0x09F;
+volatile unsigned char CPSCON0 @ 0x108;
+volatile unsigned char CPSCON1 @ 0x109;
+volatile unsigned char PMDATL @ 0x10C;
+
+volatile unsigned char EEDATA @ 0x10C;
+volatile unsigned char PMADRL @ 0x10D;
+
+volatile unsigned char EEADR @ 0x10D;
+volatile unsigned char PMDATH @ 0x10E;
+
+volatile unsigned char EEDATH @ 0x10E;
+volatile unsigned char PMADRH @ 0x10F;
+
+volatile unsigned char EEADRH @ 0x10F;
+volatile unsigned char ANSELA @ 0x185;
+volatile unsigned char ANSELB @ 0x186;
+
+# 103
+volatile unsigned char ANSELD @ 0x188;
+volatile unsigned char ANSELE @ 0x189;
+
+volatile unsigned char PMCON1 @ 0x18C;
+
+
+
+volatile bit CARRY @ ((unsigned)&STATUS*8)+0;
+volatile bit DC @ ((unsigned)&STATUS*8)+1;
+volatile bit ZERO @ ((unsigned)&STATUS*8)+2;
+volatile bit PD @ ((unsigned)&STATUS*8)+3;
+volatile bit TO @ ((unsigned)&STATUS*8)+4;
+volatile bit RP0 @ ((unsigned)&STATUS*8)+5;
+volatile bit RP1 @ ((unsigned)&STATUS*8)+6;
+volatile bit IRP @ ((unsigned)&STATUS*8)+7;
+
+
+volatile bit RA0 @ ((unsigned)&PORTA*8)+0;
+volatile bit RA1 @ ((unsigned)&PORTA*8)+1;
+volatile bit RA2 @ ((unsigned)&PORTA*8)+2;
+volatile bit RA3 @ ((unsigned)&PORTA*8)+3;
+volatile bit RA4 @ ((unsigned)&PORTA*8)+4;
+volatile bit RA5 @ ((unsigned)&PORTA*8)+5;
+volatile bit RA6 @ ((unsigned)&PORTA*8)+6;
+volatile bit RA7 @ ((unsigned)&PORTA*8)+7;
+
+
+volatile bit RB0 @ ((unsigned)&PORTB*8)+0;
+volatile bit RB1 @ ((unsigned)&PORTB*8)+1;
+volatile bit RB2 @ ((unsigned)&PORTB*8)+2;
+volatile bit RB3 @ ((unsigned)&PORTB*8)+3;
+volatile bit RB4 @ ((unsigned)&PORTB*8)+4;
+volatile bit RB5 @ ((unsigned)&PORTB*8)+5;
+volatile bit RB6 @ ((unsigned)&PORTB*8)+6;
+volatile bit RB7 @ ((unsigned)&PORTB*8)+7;
+
+
+volatile bit RC0 @ ((unsigned)&PORTC*8)+0;
+volatile bit RC1 @ ((unsigned)&PORTC*8)+1;
+volatile bit RC2 @ ((unsigned)&PORTC*8)+2;
+volatile bit RC3 @ ((unsigned)&PORTC*8)+3;
+volatile bit RC4 @ ((unsigned)&PORTC*8)+4;
+volatile bit RC5 @ ((unsigned)&PORTC*8)+5;
+volatile bit RC6 @ ((unsigned)&PORTC*8)+6;
+volatile bit RC7 @ ((unsigned)&PORTC*8)+7;
+
+# 152
+volatile bit RD0 @ ((unsigned)&PORTD*8)+0;
+volatile bit RD1 @ ((unsigned)&PORTD*8)+1;
+volatile bit RD2 @ ((unsigned)&PORTD*8)+2;
+volatile bit RD3 @ ((unsigned)&PORTD*8)+3;
+volatile bit RD4 @ ((unsigned)&PORTD*8)+4;
+volatile bit RD5 @ ((unsigned)&PORTD*8)+5;
+volatile bit RD6 @ ((unsigned)&PORTD*8)+6;
+volatile bit RD7 @ ((unsigned)&PORTD*8)+7;
+
+
+volatile bit RE0 @ ((unsigned)&PORTE*8)+0;
+volatile bit RE1 @ ((unsigned)&PORTE*8)+1;
+volatile bit RE2 @ ((unsigned)&PORTE*8)+2;
+
+volatile bit RE3 @ ((unsigned)&PORTE*8)+3;
+
+
+volatile bit RBIF @ ((unsigned)&INTCON*8)+0;
+
+volatile bit RABIF @ ((unsigned)&INTCON*8)+0;
+volatile bit INTF @ ((unsigned)&INTCON*8)+1;
+volatile bit T0IF @ ((unsigned)&INTCON*8)+2;
+volatile bit RBIE @ ((unsigned)&INTCON*8)+3;
+
+volatile bit RABIE @ ((unsigned)&INTCON*8)+3;
+volatile bit INTE @ ((unsigned)&INTCON*8)+4;
+volatile bit T0IE @ ((unsigned)&INTCON*8)+5;
+volatile bit PEIE @ ((unsigned)&INTCON*8)+6;
+volatile bit GIE @ ((unsigned)&INTCON*8)+7;
+
+
+volatile bit TMR1IF @ ((unsigned)&PIR1*8)+0;
+volatile bit TMR2IF @ ((unsigned)&PIR1*8)+1;
+volatile bit CCP1IF @ ((unsigned)&PIR1*8)+2;
+volatile bit SSPIF @ ((unsigned)&PIR1*8)+3;
+volatile bit TXIF @ ((unsigned)&PIR1*8)+4;
+volatile bit RCIF @ ((unsigned)&PIR1*8)+5;
+volatile bit ADIF @ ((unsigned)&PIR1*8)+6;
+volatile bit TMR1GIF @ ((unsigned)&PIR1*8)+7;
+
+
+volatile bit CCP2IF @ ((unsigned)&PIR2*8)+0;
+
+
+volatile bit TMR1ON @ ((unsigned)&T1CON*8)+0;
+volatile bit T1SYNC @ ((unsigned)&T1CON*8)+2;
+volatile bit T1OSCEN @ ((unsigned)&T1CON*8)+3;
+volatile bit T1CKPS0 @ ((unsigned)&T1CON*8)+4;
+volatile bit T1CKPS1 @ ((unsigned)&T1CON*8)+5;
+volatile bit TMR1CS0 @ ((unsigned)&T1CON*8)+6;
+volatile bit TMR1CS1 @ ((unsigned)&T1CON*8)+7;
+
+
+volatile bit T2CKPS0 @ ((unsigned)&T2CON*8)+0;
+volatile bit T2CKPS1 @ ((unsigned)&T2CON*8)+1;
+volatile bit TMR2ON @ ((unsigned)&T2CON*8)+2;
+volatile bit TOUTPS0 @ ((unsigned)&T2CON*8)+3;
+volatile bit TOUTPS1 @ ((unsigned)&T2CON*8)+4;
+volatile bit TOUTPS2 @ ((unsigned)&T2CON*8)+5;
+volatile bit TOUTPS3 @ ((unsigned)&T2CON*8)+6;
+
+
+volatile bit SSPM0 @ ((unsigned)&SSPCON*8)+0;
+volatile bit SSPM1 @ ((unsigned)&SSPCON*8)+1;
+volatile bit SSPM2 @ ((unsigned)&SSPCON*8)+2;
+volatile bit SSPM3 @ ((unsigned)&SSPCON*8)+3;
+volatile bit CKP @ ((unsigned)&SSPCON*8)+4;
+volatile bit SSPEN @ ((unsigned)&SSPCON*8)+5;
+volatile bit SSPOV @ ((unsigned)&SSPCON*8)+6;
+volatile bit WCOL @ ((unsigned)&SSPCON*8)+7;
+
+
+volatile bit CCP1M0 @ ((unsigned)&CCP1CON*8)+0;
+volatile bit CCP1M1 @ ((unsigned)&CCP1CON*8)+1;
+volatile bit CCP1M2 @ ((unsigned)&CCP1CON*8)+2;
+volatile bit CCP1M3 @ ((unsigned)&CCP1CON*8)+3;
+volatile bit DC1B0 @ ((unsigned)&CCP1CON*8)+4;
+volatile bit DC1B1 @ ((unsigned)&CCP1CON*8)+5;
+
+
+volatile bit RX9D @ ((unsigned)&RCSTA*8)+0;
+volatile bit OERR @ ((unsigned)&RCSTA*8)+1;
+volatile bit FERR @ ((unsigned)&RCSTA*8)+2;
+volatile bit ADDEN @ ((unsigned)&RCSTA*8)+3;
+volatile bit CREN @ ((unsigned)&RCSTA*8)+4;
+volatile bit SREN @ ((unsigned)&RCSTA*8)+5;
+volatile bit RX9 @ ((unsigned)&RCSTA*8)+6;
+volatile bit SPEN @ ((unsigned)&RCSTA*8)+7;
+
+
+volatile bit CCP2M0 @ ((unsigned)&CCP2CON*8)+0;
+volatile bit CCP2M1 @ ((unsigned)&CCP2CON*8)+1;
+volatile bit CCP2M2 @ ((unsigned)&CCP2CON*8)+2;
+volatile bit CCP2M3 @ ((unsigned)&CCP2CON*8)+3;
+volatile bit DC2B0 @ ((unsigned)&CCP2CON*8)+4;
+volatile bit DC2B1 @ ((unsigned)&CCP2CON*8)+5;
+
+
+volatile bit ADON @ ((unsigned)&ADCON0*8)+0;
+volatile bit GODONE @ ((unsigned)&ADCON0*8)+1;
+
+volatile bit ADGO @ ((unsigned)&ADCON0*8)+1;
+volatile bit CHS0 @ ((unsigned)&ADCON0*8)+2;
+volatile bit CHS1 @ ((unsigned)&ADCON0*8)+3;
+volatile bit CHS2 @ ((unsigned)&ADCON0*8)+4;
+volatile bit CHS3 @ ((unsigned)&ADCON0*8)+5;
+
+
+volatile bit PS0 @ ((unsigned)&OPTION*8)+0;
+volatile bit PS1 @ ((unsigned)&OPTION*8)+1;
+volatile bit PS2 @ ((unsigned)&OPTION*8)+2;
+volatile bit PSA @ ((unsigned)&OPTION*8)+3;
+volatile bit T0SE @ ((unsigned)&OPTION*8)+4;
+volatile bit T0CS @ ((unsigned)&OPTION*8)+5;
+volatile bit INTEDG @ ((unsigned)&OPTION*8)+6;
+volatile bit RBPU @ ((unsigned)&OPTION*8)+7;
+
+volatile bit RABPU @ ((unsigned)&OPTION*8)+7;
+
+
+volatile bit TRISA0 @ ((unsigned)&TRISA*8)+0;
+volatile bit TRISA1 @ ((unsigned)&TRISA*8)+1;
+volatile bit TRISA2 @ ((unsigned)&TRISA*8)+2;
+volatile bit TRISA3 @ ((unsigned)&TRISA*8)+3;
+volatile bit TRISA4 @ ((unsigned)&TRISA*8)+4;
+volatile bit TRISA5 @ ((unsigned)&TRISA*8)+5;
+volatile bit TRISA6 @ ((unsigned)&TRISA*8)+6;
+volatile bit TRISA7 @ ((unsigned)&TRISA*8)+7;
+
+
+volatile bit TRISB0 @ ((unsigned)&TRISB*8)+0;
+volatile bit TRISB1 @ ((unsigned)&TRISB*8)+1;
+volatile bit TRISB2 @ ((unsigned)&TRISB*8)+2;
+volatile bit TRISB3 @ ((unsigned)&TRISB*8)+3;
+volatile bit TRISB4 @ ((unsigned)&TRISB*8)+4;
+volatile bit TRISB5 @ ((unsigned)&TRISB*8)+5;
+volatile bit TRISB6 @ ((unsigned)&TRISB*8)+6;
+volatile bit TRISB7 @ ((unsigned)&TRISB*8)+7;
+
+
+volatile bit TRISC0 @ ((unsigned)&TRISC*8)+0;
+volatile bit TRISC1 @ ((unsigned)&TRISC*8)+1;
+volatile bit TRISC2 @ ((unsigned)&TRISC*8)+2;
+volatile bit TRISC3 @ ((unsigned)&TRISC*8)+3;
+volatile bit TRISC4 @ ((unsigned)&TRISC*8)+4;
+volatile bit TRISC5 @ ((unsigned)&TRISC*8)+5;
+volatile bit TRISC6 @ ((unsigned)&TRISC*8)+6;
+volatile bit TRISC7 @ ((unsigned)&TRISC*8)+7;
+
+# 304
+volatile bit TRISD0 @ ((unsigned)&TRISD*8)+0;
+volatile bit TRISD1 @ ((unsigned)&TRISD*8)+1;
+volatile bit TRISD2 @ ((unsigned)&TRISD*8)+2;
+volatile bit TRISD3 @ ((unsigned)&TRISD*8)+3;
+volatile bit TRISD4 @ ((unsigned)&TRISD*8)+4;
+volatile bit TRISD5 @ ((unsigned)&TRISD*8)+5;
+volatile bit TRISD6 @ ((unsigned)&TRISD*8)+6;
+volatile bit TRISD7 @ ((unsigned)&TRISD*8)+7;
+
+
+volatile bit TRISE0 @ ((unsigned)&TRISE*8)+0;
+volatile bit TRISE1 @ ((unsigned)&TRISE*8)+1;
+volatile bit TRISE2 @ ((unsigned)&TRISE*8)+2;
+
+volatile bit TRISE3 @ ((unsigned)&TRISE*8)+3;
+
+
+volatile bit TMR1IE @ ((unsigned)&PIE1*8)+0;
+volatile bit TMR2IE @ ((unsigned)&PIE1*8)+1;
+volatile bit CCP1IE @ ((unsigned)&PIE1*8)+2;
+volatile bit SSPIE @ ((unsigned)&PIE1*8)+3;
+volatile bit TXIE @ ((unsigned)&PIE1*8)+4;
+volatile bit RCIE @ ((unsigned)&PIE1*8)+5;
+volatile bit ADIE @ ((unsigned)&PIE1*8)+6;
+volatile bit TMR1GIE @ ((unsigned)&PIE1*8)+7;
+
+
+volatile bit CCP2IE @ ((unsigned)&PIE2*8)+0;
+
+
+volatile bit BOR @ ((unsigned)&PCON*8)+0;
+volatile bit POR @ ((unsigned)&PCON*8)+1;
+
+
+volatile bit T1GSS0 @ ((unsigned)&T1GCON*8)+0;
+volatile bit T1GSS1 @ ((unsigned)&T1GCON*8)+1;
+volatile bit T1GVAL @ ((unsigned)&T1GCON*8)+2;
+volatile bit T1GGO @ ((unsigned)&T1GCON*8)+3;
+volatile bit T1GSPM @ ((unsigned)&T1GCON*8)+4;
+volatile bit T1GTM @ ((unsigned)&T1GCON*8)+5;
+volatile bit T1GPOL @ ((unsigned)&T1GCON*8)+6;
+volatile bit TMR1GE @ ((unsigned)&T1GCON*8)+7;
+
+
+volatile bit ICSS @ ((unsigned)&OSCCON*8)+2;
+volatile bit ICSL @ ((unsigned)&OSCCON*8)+3;
+volatile bit IRCF0 @ ((unsigned)&OSCCON*8)+4;
+volatile bit IRCF1 @ ((unsigned)&OSCCON*8)+5;
+
+
+volatile bit TUN0 @ ((unsigned)&OSCTUNE*8)+0;
+volatile bit TUN1 @ ((unsigned)&OSCTUNE*8)+1;
+volatile bit TUN2 @ ((unsigned)&OSCTUNE*8)+2;
+volatile bit TUN3 @ ((unsigned)&OSCTUNE*8)+3;
+volatile bit TUN4 @ ((unsigned)&OSCTUNE*8)+4;
+volatile bit TUN5 @ ((unsigned)&OSCTUNE*8)+5;
+
+
+volatile bit BF @ ((unsigned)&SSPSTAT*8)+0;
+volatile bit UA @ ((unsigned)&SSPSTAT*8)+1;
+volatile bit RW @ ((unsigned)&SSPSTAT*8)+2;
+volatile bit START @ ((unsigned)&SSPSTAT*8)+3;
+volatile bit STOP @ ((unsigned)&SSPSTAT*8)+4;
+volatile bit DA @ ((unsigned)&SSPSTAT*8)+5;
+volatile bit CKE @ ((unsigned)&SSPSTAT*8)+6;
+volatile bit SMP @ ((unsigned)&SSPSTAT*8)+7;
+
+
+volatile bit WPUB0 @ ((unsigned)&WPUB*8)+0;
+volatile bit WPUB1 @ ((unsigned)&WPUB*8)+1;
+volatile bit WPUB2 @ ((unsigned)&WPUB*8)+2;
+volatile bit WPUB3 @ ((unsigned)&WPUB*8)+3;
+volatile bit WPUB4 @ ((unsigned)&WPUB*8)+4;
+volatile bit WPUB5 @ ((unsigned)&WPUB*8)+5;
+volatile bit WPUB6 @ ((unsigned)&WPUB*8)+6;
+volatile bit WPUB7 @ ((unsigned)&WPUB*8)+7;
+
+
+volatile bit IOCB0 @ ((unsigned)&IOCB*8)+0;
+volatile bit IOCB1 @ ((unsigned)&IOCB*8)+1;
+volatile bit IOCB2 @ ((unsigned)&IOCB*8)+2;
+volatile bit IOCB3 @ ((unsigned)&IOCB*8)+3;
+volatile bit IOCB4 @ ((unsigned)&IOCB*8)+4;
+volatile bit IOCB5 @ ((unsigned)&IOCB*8)+5;
+volatile bit IOCB6 @ ((unsigned)&IOCB*8)+6;
+volatile bit IOCB7 @ ((unsigned)&IOCB*8)+7;
+
+
+volatile bit TX9D @ ((unsigned)&TXSTA*8)+0;
+volatile bit TRMT @ ((unsigned)&TXSTA*8)+1;
+volatile bit BRGH @ ((unsigned)&TXSTA*8)+2;
+volatile bit SYNC @ ((unsigned)&TXSTA*8)+4;
+volatile bit TXEN @ ((unsigned)&TXSTA*8)+5;
+volatile bit TX9 @ ((unsigned)&TXSTA*8)+6;
+volatile bit CSRC @ ((unsigned)&TXSTA*8)+7;
+
+
+volatile bit BRG0 @ ((unsigned)&SPBRG*8)+0;
+volatile bit BRG1 @ ((unsigned)&SPBRG*8)+1;
+volatile bit BRG2 @ ((unsigned)&SPBRG*8)+2;
+volatile bit BRG3 @ ((unsigned)&SPBRG*8)+3;
+volatile bit BRG4 @ ((unsigned)&SPBRG*8)+4;
+volatile bit BRG5 @ ((unsigned)&SPBRG*8)+5;
+volatile bit BRG6 @ ((unsigned)&SPBRG*8)+6;
+volatile bit BRG7 @ ((unsigned)&SPBRG*8)+7;
+
+
+volatile bit CCP2SEL @ ((unsigned)&APFCON*8)+0;
+volatile bit SSSEL @ ((unsigned)&APFCON*8)+1;
+
+
+volatile bit ADFVR0 @ ((unsigned)&FVRCON*8)+0;
+volatile bit ADFVR1 @ ((unsigned)&FVRCON*8)+1;
+volatile bit FVREN @ ((unsigned)&FVRCON*8)+6;
+volatile bit FVRRDY @ ((unsigned)&FVRCON*8)+7;
+
+
+volatile bit ADREF0 @ ((unsigned)&ADCON1*8)+0;
+volatile bit ADREF1 @ ((unsigned)&ADCON1*8)+1;
+volatile bit ADCS0 @ ((unsigned)&ADCON1*8)+4;
+volatile bit ADCS1 @ ((unsigned)&ADCON1*8)+5;
+volatile bit ADCS2 @ ((unsigned)&ADCON1*8)+6;
+
+
+volatile bit T0XCS @ ((unsigned)&CPSCON0*8)+0;
+volatile bit CPSOUT @ ((unsigned)&CPSCON0*8)+1;
+volatile bit CPSRNG0 @ ((unsigned)&CPSCON0*8)+2;
+volatile bit CPSRNG1 @ ((unsigned)&CPSCON0*8)+3;
+volatile bit CPSON @ ((unsigned)&CPSCON0*8)+7;
+
+
+volatile bit CPSCH0 @ ((unsigned)&CPSCON1*8)+0;
+volatile bit CPSCH1 @ ((unsigned)&CPSCON1*8)+1;
+volatile bit CPSCH2 @ ((unsigned)&CPSCON1*8)+2;
+volatile bit CPSCH3 @ ((unsigned)&CPSCON1*8)+3;
+
+
+volatile bit ANSA0 @ ((unsigned)&ANSELA*8)+0;
+volatile bit ANSA1 @ ((unsigned)&ANSELA*8)+1;
+volatile bit ANSA2 @ ((unsigned)&ANSELA*8)+2;
+volatile bit ANSA3 @ ((unsigned)&ANSELA*8)+3;
+volatile bit ANSA4 @ ((unsigned)&ANSELA*8)+4;
+volatile bit ANSA5 @ ((unsigned)&ANSELA*8)+5;
+
+
+volatile bit ANSB0 @ ((unsigned)&ANSELB*8)+0;
+volatile bit ANSB1 @ ((unsigned)&ANSELB*8)+1;
+volatile bit ANSB2 @ ((unsigned)&ANSELB*8)+2;
+volatile bit ANSB3 @ ((unsigned)&ANSELB*8)+3;
+volatile bit ANSB4 @ ((unsigned)&ANSELB*8)+4;
+volatile bit ANSB5 @ ((unsigned)&ANSELB*8)+5;
+
+# 459
+volatile bit ANSD0 @ ((unsigned)&ANSELD*8)+0;
+volatile bit ANSD1 @ ((unsigned)&ANSELD*8)+1;
+volatile bit ANSD2 @ ((unsigned)&ANSELD*8)+2;
+volatile bit ANSD3 @ ((unsigned)&ANSELD*8)+3;
+volatile bit ANSD4 @ ((unsigned)&ANSELD*8)+4;
+volatile bit ANSD5 @ ((unsigned)&ANSELD*8)+5;
+volatile bit ANSD6 @ ((unsigned)&ANSELD*8)+6;
+volatile bit ANSD7 @ ((unsigned)&ANSELD*8)+7;
+
+
+volatile bit ANSE0 @ ((unsigned)&ANSELE*8)+0;
+volatile bit ANSE1 @ ((unsigned)&ANSELE*8)+1;
+volatile bit ANSE2 @ ((unsigned)&ANSELE*8)+2;
+
+
+
+volatile bit RD @ ((unsigned)&PMCON1*8)+0;
+
+
+# 503 "C:\Program Files\HI-TECH Software\include\pic.h"
+#pragma inline(_nop)
+extern void _nop(void);
+
+# 556
+extern unsigned int flash_read(unsigned short addr);
+
+
+# 629
+#pragma inline(_delay)
+extern void _delay(unsigned long);
+
+# 11 "C:\Users\Phang\Desktop\9.80\PR 28\PR28.h"
+typedef struct {
+char BTN0 ;
+char BTN1 ;
+char BTN2 ;
+char BTN3 ;
+char BTN4 ;
+char BTN5 ;
+char BTN6 ;
+char BTN7 ;
+char BTN8 ;
+
+} BButtons;
+
+
+
+typedef struct {
+char SSPBF : 1;
+} FFlags;
+
+# 12 "C:\Users\Phang\Desktop\9.80\PR 28\PR28.c"
+asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0x3CE4");
+
+# 24
+unsigned int reading[9];
+unsigned int average[9];
+unsigned int threshold;
+unsigned char index;
+unsigned int threshold4;
+FFlags Flags;
+BButtons Buttons;
+unsigned int bigval;
+unsigned int smallavg;
+unsigned char result;
+unsigned char result1[3];
+unsigned char flag;
+char data;
+unsigned char matrix[3][3];
+
+# 44
+void Init(void);
+void RestartTimers(void);
+void RestartTimer1(void);
+void SetNextChannel(void);
+void CapInit(void);
+void DisplayLEDs(void);
+void interrupt isr(void);
+void SLEEP_NOP(void);
+void led_display1(unsigned char value1);
+void led_display2(unsigned char value2);
+void led_display3(unsigned char value3);
+void delay(unsigned long data);
+void send_config(unsigned char data);
+void send_char(unsigned char data);
+void lcd_goto(unsigned char data);
+void lcd_clr(void);
+void lcd_shift(void);
+void send_string(const char *s);
+void e_pulse(void);
+void draw(void);
+void led_off (void);
+void GetReading(void);
+void PIEZO(void);
+void PIEZO_D(void);
+void PIEZO_S(void);
+void store(void);
+void player_1(void);
+void player_2(void);
+void checkflag(void);
+char winlose(void);
+void checkstatus(void);
+
+# 85
+void main(void) {
+
+Init();
+
+
+send_config(0b00000001);
+send_config(0b00000010);
+send_config(0b00000110);
+send_config(0b00001100);
+send_config(0b00111000);
+lcd_clr();
+lcd_goto(0);
+send_string("Cytron Technologies Sdn Bhd   ");
+lcd_goto(20);
+send_string("PR 28 - mTouch with Tic Tac Toe");
+delay(10000);
+for (int i = 0; i <15 ; i++)
+{
+lcd_shift();
+}
+delay(30000);
+lcd_clr();
+lcd_goto(0);
+send_string("Player 1 = red");
+lcd_goto(20);
+send_string("Player 2 = green");
+delay(60000);
+lcd_clr();
+lcd_goto(0);
+send_string("Player 1 starts");
+lcd_goto(20);
+send_string("first");
+delay(30000);
+
+Buttons.BTN0 = Buttons.BTN1 = Buttons.BTN2 = Buttons.BTN3 = 0;
+Buttons.BTN4 = Buttons.BTN5 = Buttons.BTN6 = Buttons.BTN7 = 0;
+Buttons.BTN8 = 0;
+
+
+PIEZO_S();
+while (data == ' ')
+{
+if( flag == 0)
+{
+lcd_clr();
+lcd_goto(0);
+send_string("Player 1's turn");
+}else
+{
+lcd_clr();
+lcd_goto(0);
+send_string("Player 2's turn");
+}
+checkflag();
+data = winlose();
+}
+if(data =='X'){
+PIEZO();
+lcd_clr();
+lcd_goto(0);
+send_string("congratulation! ");
+lcd_goto(20);
+send_string("**player1 wins**");
+}
+if(data == 'O'){
+PIEZO();
+lcd_clr();
+lcd_goto(0);
+send_string("congratulation! ");
+lcd_goto(20);
+send_string("**player2 wins**");
+}while(data == 'd'){
+PIEZO_D();
+while(1){
+draw();
+lcd_clr();
+lcd_goto(0);
+send_string("congratulation! ");
+lcd_goto(20);
+send_string("***draw***");
+}
+}
+while(1){}
+}
+
+# 176
+void Init(void)
+{
+
+# 192
+TRISA = 0b00010000;
+TRISB = 0b00000000;
+TRISC = 0b00000000;
+TRISD = 0b11111111;
+TRISE = 0b00000000;
+PORTB = 0;
+PORTE = 0;
+
+led_off();
+
+ANSELA = 0x10;
+ANSELB = 0x00;
+ANSELE = 0x00;
+ANSELD = 0b11111111;
+
+result = 0;
+flag = 0;
+index =0;
+OSCCON = 0x10;
+
+# 219
+GIE = 1;
+CPSCON0 = 0b10001101;
+CPSCON1 = 0b00001000;
+CapInit();
+data = winlose();
+PEIE = 1;
+}
+
+# 234
+void CapInit(void)
+{
+
+
+for (index=0; index<9; index++) {
+average[index] = 0;
+reading[index] = 0;
+}
+for(int i=0; i<3; i++){
+for(int j=0; j<3; j++){
+matrix[i][j] = ' ';
+}
+}
+
+# 252
+T2CON = 0b01110110;
+PR2 = 0xB4;
+TMR2IF = 0;
+TMR2IE = 1;
+T1CON = 0b11000101;
+T1GCON = 0b11100010;
+TMR1GIF = 0;
+TMR1GIE = 1;
+
+}
+
+# 270
+void interrupt isr(void)
+{
+
+while (TMR1GIF )
+{
+
+TMR2ON =0;
+TMR1ON = 0;
+TMR1GIF = 0;
+
+GetReading();
+}
+}
+
+# 290
+void checkflag(void)
+{
+switch(flag){
+case 0: player_1(); break;
+case 1: player_2(); break;
+default: break;
+}
+}
+
+# 304
+void player_1(void)
+{
+while(flag == 0){
+checkstatus();
+}
+
+}
+
+# 317
+void player_2(void)
+{
+while (flag == 1){
+checkstatus();
+}
+}
+
+# 330
+void store(void)
+{
+if (flag ==0){
+if(Buttons.BTN0 == 1) { matrix[0][0] = 'X';}
+if(Buttons.BTN1 == 1) { matrix[0][1] = 'X';}
+if(Buttons.BTN2 == 1) { matrix[0][2] = 'X';}
+if(Buttons.BTN3 == 1) { matrix[1][0] = 'X';}
+if(Buttons.BTN4 == 1) { matrix[1][1] = 'X';}
+if(Buttons.BTN5 == 1) { matrix[1][2] = 'X';}
+if(Buttons.BTN6 == 1) { matrix[2][0] = 'X';}
+if(Buttons.BTN7 == 1) { matrix[2][1] = 'X';}
+if(Buttons.BTN8 == 1) { matrix[2][2] = 'X';}
+}
+else if(flag == 1){
+if(Buttons.BTN0 == 1) { matrix[0][0] = 'O';}
+if(Buttons.BTN1 == 1) { matrix[0][1] = 'O';}
+if(Buttons.BTN2 == 1) { matrix[0][2] = 'O';}
+if(Buttons.BTN3 == 1) { matrix[1][0] = 'O';}
+if(Buttons.BTN4 == 1) { matrix[1][1] = 'O';}
+if(Buttons.BTN5 == 1) { matrix[1][2] = 'O';}
+if(Buttons.BTN6 == 1) { matrix[2][0] = 'O';}
+if(Buttons.BTN7 == 1) { matrix[2][1] = 'O';}
+if(Buttons.BTN8 == 1) { matrix[2][2] = 'O';}
+}
+}
+
+# 362
+void checkstatus(void){
+if(Buttons.BTN0 ==1){
+if (matrix[0][0] =='X' | matrix[0][0] == 'O')
+{ if(flag==0){flag = 0;}
+else
+flag = 1;
+}else {
+store();
+DisplayLEDs();
+if(flag ==0){flag = 1;}
+else
+flag = 0;
+}
+}
+if(Buttons.BTN1 ==1){
+if (matrix[0][1] =='X' | matrix[0][1] == 'O')
+{ if(flag==0){flag = 0;}
+else
+flag = 1;
+}else {
+store();
+DisplayLEDs();
+if(flag ==0){flag = 1;}
+else
+flag = 0;
+}
+}
+if(Buttons.BTN2 ==1){
+if (matrix[0][2] =='X' | matrix[0][2] == 'O')
+{ if(flag==0){flag = 0;}
+else
+flag = 1;
+}else {
+store();
+DisplayLEDs();
+if(flag ==0){flag = 1;}
+else
+flag = 0;
+}
+}
+if(Buttons.BTN3 ==1){
+if (matrix[1][0] =='X' | matrix[1][0] == 'O')
+{ if(flag==0){flag = 0;}
+else
+flag = 1;
+}else {
+store();
+DisplayLEDs();
+if(flag ==0){flag = 1;}
+else
+flag = 0;
+}
+}
+if(Buttons.BTN4 ==1){
+if (matrix[1][1] =='X' | matrix[1][1] == 'O')
+{ if(flag==0){flag = 0;}
+else
+flag = 1;
+}else {
+store();
+DisplayLEDs();
+if(flag ==0){flag = 1;}
+else
+flag = 0;
+}
+}
+if(Buttons.BTN5 ==1){
+if (matrix[1][2] =='X' | matrix[1][2] == 'O')
+{ if(flag==0){flag = 0;}
+else
+flag = 1;
+}else {
+store();
+DisplayLEDs();
+if(flag ==0){flag = 1;}
+else
+flag = 0;
+}
+}
+if(Buttons.BTN6 ==1){
+if (matrix[2][0] =='X' | matrix[2][0] == 'O')
+{ if(flag==0){flag = 0;}
+else
+flag = 1;
+}else {
+store();
+DisplayLEDs();
+if(flag ==0){flag = 1;}
+else
+flag = 0;
+}
+}
+if(Buttons.BTN7 ==1){
+if (matrix[2][1] =='X' | matrix[2][1] == 'O')
+{ if(flag==0){flag = 0;}
+else
+flag = 1;
+}else {
+store();
+DisplayLEDs();
+if(flag ==0){flag = 1;}
+else
+flag = 0;
+}
+}
+if(Buttons.BTN8 ==1){
+if (matrix[2][2] =='X' | matrix[2][2] == 'O')
+{ if(flag==0){flag = 0;}
+else
+flag = 1;
+}else {
+store();
+DisplayLEDs();
+if(flag ==0){flag = 1;}
+else
+flag = 0;
+}
+}
+}
+
+# 488
+void GetReading(void){
+bigval = TMR1L + (unsigned int)(TMR1H << 8);
+bigval = bigval * 16;
+reading[index] = bigval;
+smallavg = average[index] / 16;
+threshold4 = average[index] >> 2;
+threshold = threshold4;
+if (bigval < average[index] - threshold)
+{
+switch (index)
+{
+case 0: Buttons.BTN0 = 1; break;
+case 1: Buttons.BTN1 = 1; break;
+case 2: Buttons.BTN2 = 1; break;
+case 3: Buttons.BTN3 = 1; break;
+case 4: Buttons.BTN4 = 1; break;
+case 5: Buttons.BTN5 = 1; break;
+case 6: Buttons.BTN6 = 1; break;
+case 7: Buttons.BTN7 = 1; break;
+case 8: Buttons.BTN8 = 1; break;
+
+default: break;
+}
+}
+else
+{
+
+switch (index)
+{
+case 0: Buttons.BTN0 = 0; break;
+case 1: Buttons.BTN1 = 0; break;
+case 2: Buttons.BTN2 = 0; break;
+case 3: Buttons.BTN3 = 0; break;
+case 4: Buttons.BTN4 = 0; break;
+case 5: Buttons.BTN5 = 0; break;
+case 6: Buttons.BTN6 = 0; break;
+case 7: Buttons.BTN7 = 0; break;
+case 8: Buttons.BTN8 = 0; break;
+
+default: break;
+}
+
+
+average[index] += bigval/16 - smallavg;
+}
+SetNextChannel();
+RestartTimer1();
+}
+
+# 543
+void RestartTimer1(void)
+{
+TMR1L = 0;
+TMR1H = 0;
+TMR2 = 0;
+TMR2IF = 0;
+TMR1ON = 1;
+TMR2ON = 1;
+}
+
+# 559
+void SetNextChannel(void)
+{
+if (++index>= 9)
+index = 0;
+else;
+if(index==0)
+CPSCON1 = 0b00001000;
+if(index==1)
+CPSCON1 = 0b00001001;
+if(index==2)
+CPSCON1 = 0b00001010;
+if(index == 3)
+CPSCON1 = 0b00001011;
+if(index== 4)
+CPSCON1 = 0b00001100;
+if(index == 5)
+CPSCON1 = 0b00001101;
+if(index ==6)
+CPSCON1 = 0b00001110;
+if (index ==7)
+CPSCON1 = 0b00001111;
+if (index == 8)
+CPSCON1 = 0b00000110;
+}
+
+# 590
+void DisplayLEDs(void)
+{
+RC5 = 1; RC6 =1; RC7 =1;
+RA6 = RA7 = RA0 = 0;
+
+
+for(int k = 0; k< 3 ; k++)
+{
+led_display1(result1[0]);led_display2(result1[1]);led_display3(result1[2]);
+if(matrix[0][k] == 'O' & matrix[1][k] == 'O' & matrix[2][k] == 'O'){result1[k] = 0b01001001;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == 'O' & matrix[2][k] == ' '){result1[k] = 0b01001000;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == ' ' & matrix[2][k] == 'O'){result1[k] = 0b01000001;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == ' ' & matrix[2][k] == ' '){result1[k] = 0b01000000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'O' & matrix[2][k] == 'O'){result1[k] = 0b00001001;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'O' & matrix[2][k] == ' '){result1[k] = 0b00001000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == ' ' & matrix[2][k] == 'O'){result1[k] = 0b00000001;}
+
+else if(matrix[0][k] == 'O' & matrix[1][k] == 'O' & matrix[2][k] == 'X'){result1[k] = 0b01001010;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == 'O' & matrix[2][k] == ' '){result1[k] = 0b01001000;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == ' ' & matrix[2][k] == 'X'){result1[k] = 0b01000010;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == ' ' & matrix[2][k] == ' '){result1[k] = 0b01000000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'O' & matrix[2][k] == 'X'){result1[k] = 0b00001010;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'O' & matrix[2][k] == ' '){result1[k] = 0b00001000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == ' ' & matrix[2][k] == 'X'){result1[k] = 0b00000010;}
+
+else if(matrix[0][k] == 'O' & matrix[1][k] == 'X' & matrix[2][k] == 'O'){result1[k] = 0b01010001;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == 'X' & matrix[2][k] == ' '){result1[k] = 0b01010000;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == ' ' & matrix[2][k] == 'O'){result1[k] = 0b01000001;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == ' ' & matrix[2][k] == ' '){result1[k] = 0b01000000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'X' & matrix[2][k] == 'O'){result1[k] = 0b00010001;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'X' & matrix[2][k] == ' '){result1[k] = 0b00010000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == ' ' & matrix[2][k] == 'O'){result1[k] = 0b00000001;}
+
+else if(matrix[0][k] == 'O' & matrix[1][k] == 'X' & matrix[2][k] == 'X'){result1[k] = 0b01010010;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == 'X' & matrix[2][k] == ' '){result1[k] = 0b01010000;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == ' ' & matrix[2][k] == 'X'){result1[k] = 0b01000010;}
+else if(matrix[0][k] == 'O' & matrix[1][k] == ' ' & matrix[2][k] == ' '){result1[k] = 0b01000000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'X' & matrix[2][k] == 'X'){result1[k] = 0b00010010;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'X' & matrix[2][k] == ' '){result1[k] = 0b00010000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == ' ' & matrix[2][k] == 'X'){result1[k] = 0b00000010;}
+
+else if(matrix[0][k] == 'X' & matrix[1][k] == 'O' & matrix[2][k] == 'O'){result1[k] = 0b10001001;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == 'O' & matrix[2][k] == ' '){result1[k] = 0b10001000;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == ' ' & matrix[2][k] == 'O'){result1[k] = 0b10000001;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == ' ' & matrix[2][k] == ' '){result1[k] = 0b10000000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'O' & matrix[2][k] == 'O'){result1[k] = 0b00001001;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'O' & matrix[2][k] == ' '){result1[k] = 0b00001000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == ' ' & matrix[2][k] == 'O'){result1[k] = 0b00000001;}
+
+else if(matrix[0][k] == 'X' & matrix[1][k] == 'O' & matrix[2][k] == 'X'){result1[k] = 0b10001010;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == 'O' & matrix[2][k] == ' '){result1[k] = 0b10001000;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == ' ' & matrix[2][k] == 'X'){result1[k] = 0b10000010;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == ' ' & matrix[2][k] == ' '){result1[k] = 0b10000000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'O' & matrix[2][k] == 'X'){result1[k] = 0b00001010;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'O' & matrix[2][k] == ' '){result1[k] = 0b00001000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == ' ' & matrix[2][k] == 'X'){result1[k] = 0b00000010;}
+
+else if(matrix[0][k] == 'X' & matrix[1][k] == 'X' & matrix[2][k] == 'O'){result1[k] = 0b10010001;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == 'X' & matrix[2][k] == ' '){result1[k] = 0b10010000;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == ' ' & matrix[2][k] == 'O'){result1[k] = 0b10000001;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == ' ' & matrix[2][k] == ' '){result1[k] = 0b10000000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'X' & matrix[2][k] == 'O'){result1[k] = 0b00010001;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'X' & matrix[2][k] == ' '){result1[k] = 0b00010000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == ' ' & matrix[2][k] == 'O'){result1[k] = 0b00000001;}
+
+else if(matrix[0][k] == 'X' & matrix[1][k] == 'X' & matrix[2][k] == 'X'){result1[k] = 0b10010010;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == 'X' & matrix[2][k] == ' '){result1[k] = 0b10010000;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == ' ' & matrix[2][k] == 'X'){result1[k] = 0b10000010;}
+else if(matrix[0][k] == 'X' & matrix[1][k] == ' ' & matrix[2][k] == ' '){result1[k] = 0b10000000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'X' & matrix[2][k] == 'X'){result1[k] = 0b00010010;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == 'X' & matrix[2][k] == ' '){result1[k] = 0b00010000;}
+else if(matrix[0][k] == ' ' & matrix[1][k] == ' ' & matrix[2][k] == 'X'){result1[k] = 0b00000010;}
+
+led_display1(result1[0]);led_display2(result1[1]);led_display3(result1[2]);
+}
+}
+
+# 671
+void led_display1(unsigned char value1)
+{
+if((value1&0b00000001)==1) RC1=1;
+else RC1=0;
+RC3=1;
+RC3=0;
+
+if(((value1&0b00000010)>>1)==1) RC1=1;
+else RC1=0;
+RC3=1;
+RC3=0;
+
+if(((value1&0b00000100)>>2)==1) RC1=1;
+else RC1=0;
+RC3=1;
+RC3=0;
+
+if(((value1&0b00001000)>>3)==1) RC1=1;
+else RC1=0;
+RC3=1;
+RC3=0;
+
+if(((value1&0b00010000)>>4)==1) RC1=1;
+else RC1=0;
+RC3=1;
+RC3=0;
+
+if(((value1&0b00100000)>>5)==1) RC1=1;
+else RC1=0;
+RC3=1;
+RC3=0;
+
+if(((value1&0b01000000)>>6)==1) RC1=1;
+else RC1=0;
+RC3=1;
+RC3=0;
+
+if(((value1&0b10000000)>>7)==1) RC1=1;
+else RC1=0;
+RC3=1;
+RC3=0;
+
+RC4=1;
+RC4=0;
+}
+
+# 721
+void led_display2(unsigned char value2)
+{
+if((value2&0b00000001)==1) RA5=1;
+else RA5=0;
+RC0=1;
+RC0=0;
+
+if(((value2&0b00000010)>>1)==1) RA5=1;
+else RA5=0;
+RC0=1;
+RC0=0;
+
+if(((value2&0b00000100)>>2)==1) RA5=1;
+else RA5=0;
+RC0=1;
+RC0=0;
+
+if(((value2&0b00001000)>>3)==1) RA5=1;
+else RA5=0;
+RC0=1;
+RC0=0;
+
+if(((value2&0b00010000)>>4)==1) RA5=1;
+else RA5=0;
+RC0=1;
+RC0=0;
+
+if(((value2&0b00100000)>>5)==1) RA5=1;
+else RA5=0;
+RC0=1;
+RC0=0;
+
+if(((value2&0b01000000)>>6)==1) RA5=1;
+else RA5=0;
+RC0=1;
+RC0=0;
+
+if(((value2&0b10000000)>>7)==1) RA5=1;
+else RA5=0;
+RC0=1;
+RC0=0;
+
+RE2=1;
+RE2=0;
+}
+
+# 771
+void led_display3(unsigned char value3)
+{
+if((value3&0b00000001)==1) RA1=1;
+else RA1=0;
+RA3=1;
+RA3=0;
+
+if(((value3&0b00000010)>>1)==1) RA1=1;
+else RA1=0;
+RA3=1;
+RA3=0;
+
+if(((value3&0b00000100)>>2)==1) RA1=1;
+else RA1=0;
+RA3=1;
+RA3=0;
+
+if(((value3&0b00001000)>>3)==1) RA1=1;
+else RA1=0;
+RA3=1;
+RA3=0;
+
+if(((value3&0b00010000)>>4)==1) RA1=1;
+else RA1=0;
+RA3=1;
+RA3=0;
+
+if(((value3&0b00100000)>>5)==1) RA1=1;
+else RA1=0;
+RA3=1;
+RA3=0;
+
+if(((value3&0b01000000)>>6)==1) RA1=1;
+else RA1=0;
+RA3=1;
+RA3=0;
+
+if(((value3&0b10000000)>>7)==1) RA1=1;
+else RA1=0;
+RA3=1;
+RA3=0;
+
+RA2=1;
+RA2=0;
+}
+
+# 821
+void delay(unsigned long data)
+{
+for( ;data>0;data-=1);
+}
+
+# 830
+void send_config(unsigned char data)
+{
+RE0=0;
+PORTB=data;
+delay(50);
+e_pulse();
+}
+
+# 842
+void send_char(unsigned char data)
+{
+RE0=1;
+PORTB=data;
+delay(50);
+e_pulse();
+}
+
+# 854
+void e_pulse(void)
+{
+RE1=1;
+delay(50);
+RE1=0;
+delay(50);
+}
+
+# 866
+void lcd_goto(unsigned char data)
+{
+if(data<16)
+{
+send_config(0x80+data);
+}
+else
+{
+data=data-20;
+send_config(0xc0+data);
+}
+}
+
+# 883
+void lcd_shift(void)
+{
+send_config(0x18);
+delay(6000);
+}
+
+# 893
+void lcd_clr(void)
+{
+send_config(0x01);
+delay(50);
+}
+
+# 903
+void send_string(const char *s)
+{
+
+while (s && *s)send_char (*s++);
+
+}
+
+# 914
+void draw(void){
+
+RC5 = RC6 = RC7 = 1;
+result = 0b00100100;
+RA6 = RA7 = RA0 = 1;
+led_display1(result);
+led_display2(result);
+led_display3(result);
+delay(3500);
+led_off();
+delay(3500);
+}
+
+# 931
+void led_off(void)
+{
+result = 0b00000000;
+RA6 = RA7 = RA0 = 0;
+RC5 = RC6 = RC7 = 0;
+led_display1(result);
+led_display2(result);
+led_display3(result);
+}
+
+# 945
+void PIEZO(void)
+{
+GIE=0;
+TMR2ON = 0;
+TMR1ON = 0;
+
+CCP1CON = 0b00001100;
+T2CON = 0b00000111;
+PR2 = 0x76;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0x7D;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0x9E;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0x76;
+CCPR1L = 100;
+delay(8000);
+PR2 = 0x7D;
+CCPR1L = 100;
+delay(8000);
+PR2 = 0xBD;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0x00;
+CCPR1L = 50;
+delay(2000);
+PR2 = 0x76;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xEE;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0x9E;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0x8D;
+CCPR1L = 50;
+delay(8000);
+PR2 = 0x76;
+CCPR1L = 50;
+delay(8000);
+
+CCP1CON = 0x00;
+T2CON=0b01110110;
+PR2 = 0xB4;
+CCPR1L = 0;
+
+TMR2IF = 0;
+TMR2IE = 1;
+T1CON = 0b11000101;
+T1GCON = 0b11100010;
+TMR1GIF = 0;
+TMR1GIE = 1;
+
+RestartTimer1();
+GIE = 1;
+}
+
+# 1010
+void PIEZO_D(void)
+{
+GIE=0;
+TMR2ON = 0;
+TMR1ON = 0;
+CCP1CON = 0b00001100;
+T2CON = 0b00000111;
+PR2 = 0xBC;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xBC;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xB2;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0x9E;
+CCPR1L = 100;
+delay(4000);
+PR2 = 0x9E;
+CCPR1L = 100;
+delay(4000);
+PR2 = 0xB2;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xBC;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xD3;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xEE;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xEE;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xD3;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xBC;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xBC;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xD3;
+CCPR1L = 50;
+delay(2000);
+PR2 = 0xD3;
+CCPR1L = 50;
+delay(8000);
+PR2 = 0xBC;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xBC;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xB2;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0x9E;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0x9E;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xB2;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xBC;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xD3;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xEE;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xEE;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xD3;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xBC;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xD3;
+CCPR1L = 50;
+delay(4000);
+PR2 = 0xEE;
+CCPR1L = 50;
+delay(2000);
+PR2 = 0xEE;
+CCPR1L = 50;
+delay(8000);
+
+CCP1CON = 0x00;
+T2CON=0b01110110;
+PR2 = 0xB4;
+CCPR1L = 0;
+
+TMR2IF = 0;
+TMR2IE = 1;
+T1CON = 0b11000101;
+T1GCON = 0b11100010;
+TMR1GIF = 0;
+TMR1GIE = 1;
+
+RestartTimer1();
+GIE = 1;
+}
+
+# 1128
+void PIEZO_S(void)
+{
+GIE=0;
+TMR2ON = 0;
+TMR1ON = 0;
+
+CCP1CON = 0b00001100;
+T2CON = 0b00000111;
+
+PR2 = 0xEE;
+CCPR1L = 50;
+delay(2000);
+PR2 = 0xD3;
+CCPR1L = 50;
+delay(2000);
+PR2 = 0xBD;
+CCPR1L = 100;
+delay(2000);
+PR2 = 0xB2;
+CCPR1L = 100;
+delay(2000);
+PR2 = 0x9E;
+CCPR1L = 50;
+delay(2000);
+PR2 = 0x8D;
+CCPR1L = 50;
+delay(2000);
+PR2 = 0x7D;
+CCPR1L = 50;
+delay(2000);
+PR2 = 0x76;
+CCPR1L = 50;
+delay(4000);
+
+
+CCP1CON = 0x00;
+T2CON=0b01110110;
+PR2 = 0xB4;
+CCPR1L = 0;
+
+TMR2IF = 0;
+TMR2IE = 1;
+T1CON = 0b11000101;
+T1GCON = 0b11100010;
+TMR1GIF = 0;
+TMR1GIE = 1;
+
+RestartTimer1();
+GIE = 1;
+}
+
+# 1183
+char winlose(void)
+{
+int status;
+int i,j;
+status =0;
+char flag_w;
+for(int i=0; i<3; i++)
+{
+
+if((matrix[i][0]== matrix[i][1]) & (matrix[i][0] == matrix[i][2])){
+return matrix[i][0];
+}
+
+if(matrix[0][i] == matrix[1][i] & matrix[0][i] == matrix[2][i]){
+return matrix[0][i];
+}
+
+if(matrix[0][0] == matrix[1][1] & matrix[0][0] == matrix[2][2]){
+return matrix[0][0];
+}
+if(matrix[0][2] == matrix[1][1] & matrix[0][2] == matrix[2][0]){
+return matrix[0][2];
+}
+
+
+}
+for(int i=0; i<3; i++){
+for(int j=0; j<3; j++){
+if(matrix[i][j] == ' '){
+status++;
+}else{
+status = status;
+}
+}
+}
+if(status == 0){
+flag_w = 'd';
+return flag_w;
+}else{
+flag_w = ' ';
+return flag_w;
+}
+}
